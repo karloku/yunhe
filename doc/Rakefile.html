@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 
-<title>yunhe.gemspec - RDoc Documentation</title>
+<title>Rakefile - RDoc Documentation</title>
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "./";
@@ -72,26 +72,26 @@
   </div>
 </nav>
 
-<main role="main" aria-label="Page yunhe.gemspec">
+<main role="main" aria-label="Page Rakefile">
 
-<p>$LOAD_PATH.push File.expand_path(&#39;../lib&#39;, __FILE__) require
-&#39;yunhe/version&#39;</p>
+<p>task :build do</p>
 
-<p>Gem::Specification.new do |s|</p>
+<pre class="ruby"><span class="ruby-constant">IO</span>.<span class="ruby-identifier">popen</span> <span class="ruby-string">&quot;gem build ./yunhe.gemspec&quot;</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+  <span class="ruby-keyword">while</span> <span class="ruby-identifier">line</span> = <span class="ruby-identifier">f</span>.<span class="ruby-identifier">gets</span> <span class="ruby-keyword">do</span>
+   <span class="ruby-identifier">puts</span> <span class="ruby-identifier">line</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
 
-<pre class="ruby"><span class="ruby-identifier">s</span>.<span class="ruby-identifier">name</span>        = <span class="ruby-string">&#39;yunhe&#39;</span>
-<span class="ruby-identifier">s</span>.<span class="ruby-identifier">version</span>     = <span class="ruby-constant">Yunhe</span><span class="ruby-operator">::</span><span class="ruby-constant">VERSION</span>
-<span class="ruby-identifier">s</span>.<span class="ruby-identifier">date</span>        = <span class="ruby-string">&#39;2015-03-31&#39;</span>
-<span class="ruby-identifier">s</span>.<span class="ruby-identifier">summary</span>     = <span class="ruby-string">&quot;Yunhe&quot;</span>
-<span class="ruby-identifier">s</span>.<span class="ruby-identifier">description</span> = <span class="ruby-string">&quot;A light weight producer-consumer gem&quot;</span>
-<span class="ruby-identifier">s</span>.<span class="ruby-identifier">authors</span>     = [<span class="ruby-string">&quot;Karloku Sang&quot;</span>]
-<span class="ruby-identifier">s</span>.<span class="ruby-identifier">email</span>       = <span class="ruby-string">&#39;karloku@loku.it&#39;</span>
-<span class="ruby-identifier">s</span>.<span class="ruby-identifier">files</span>       = <span class="ruby-value">%x`git ls-files`</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;\n&quot;</span>)
-<span class="ruby-identifier">s</span>.<span class="ruby-identifier">homepage</span>    =
-  <span class="ruby-string">&#39;http://loku.it/yunhe&#39;</span>
-<span class="ruby-identifier">s</span>.<span class="ruby-identifier">license</span>       = <span class="ruby-string">&#39;MIT&#39;</span>
+<p>end</p>
 
-<span class="ruby-identifier">s</span>.<span class="ruby-identifier">rdoc_options</span> = [<span class="ruby-string">&quot;--main&quot;</span>, <span class="ruby-string">&quot;README.md&quot;</span>]
+<p>task :install do</p>
+
+<pre class="ruby"><span class="ruby-constant">IO</span>.<span class="ruby-identifier">popen</span> <span class="ruby-string">&quot;gem install ./*.gem&quot;</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+  <span class="ruby-keyword">while</span> <span class="ruby-identifier">line</span> = <span class="ruby-identifier">f</span>.<span class="ruby-identifier">gets</span> <span class="ruby-keyword">do</span>
+   <span class="ruby-identifier">puts</span> <span class="ruby-identifier">line</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
 </pre>
 
 <p>end</p>

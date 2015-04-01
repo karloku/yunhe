@@ -61,6 +61,8 @@
   
     <li><a href="./README_md.html">README</a>
   
+    <li><a href="./Rakefile.html">Rakefile</a>
+  
     <li><a href="./yunhe_gemspec.html">yunhe.gemspec</a>
   
   </ul>
@@ -88,7 +90,26 @@
 <main role="main">
 
 
-<p><a href="Yunhe.html">Yunhe</a></p>
+<h1 id="label-Yunhe-3A-E8-BF-90-E6-B2-B3">Yunhe:运河<span><a href="#label-Yunhe-3A-E8-BF-90-E6-B2-B3">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<p><a href="Yunhe.html">Yunhe</a> is a light weight gem that implements the
+Producer/Consumer pattern using threads</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;yunhe&#39;</span>
+<span class="ruby-comment"># options</span>
+<span class="ruby-identifier">options</span> = {
+  <span class="ruby-identifier">producer_size</span><span class="ruby-operator">:</span> <span class="ruby-value">1</span>,   <span class="ruby-comment"># size of producer thread pool</span>
+  <span class="ruby-identifier">consumer_size</span><span class="ruby-operator">:</span> <span class="ruby-value">5</span>,   <span class="ruby-comment"># size of consumer thread pool</span>
+  <span class="ruby-identifier">queue_size</span><span class="ruby-operator">:</span> <span class="ruby-value">100</span>     <span class="ruby-comment"># size of buffer queue</span>
+}
+<span class="ruby-identifier">yunhe</span> = <span class="ruby-constant">Yunhe</span>.<span class="ruby-identifier">build</span>(<span class="ruby-identifier">options</span>)
+<span class="ruby-identifier">yunhe</span>.<span class="ruby-identifier">produce_by</span> <span class="ruby-keyword">do</span> 
+  <span class="ruby-constant">Date</span>.<span class="ruby-identifier">now</span>
+<span class="ruby-keyword">end</span>
+<span class="ruby-identifier">yunhe</span>.<span class="ruby-identifier">consume_with</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">res</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-identifier">res</span>
+<span class="ruby-keyword">end</span>
+</pre>
 </main>
 
 

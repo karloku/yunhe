@@ -221,11 +221,11 @@ the producer pool :consumer_size      =&gt; Size of the consumer pool
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/yunhe/core.rb, line 19</span>
+            <pre><span class="ruby-comment"># File lib/yunhe/core.rb, line 18</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">options</span>)
-  <span class="ruby-identifier">producer_size</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:producer_size</span>]
-  <span class="ruby-identifier">consumer_size</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:consumer_size</span>]
-  <span class="ruby-identifier">queue_size</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:queue_size</span>]
+  <span class="ruby-ivar">@producer_size</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:producer_size</span>]
+  <span class="ruby-ivar">@consumer_size</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:consumer_size</span>]
+  <span class="ruby-ivar">@queue_size</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:queue_size</span>]
 
   <span class="ruby-ivar">@producer_pool</span> = <span class="ruby-constant">ThreadGroup</span>.<span class="ruby-identifier">new</span>
   <span class="ruby-ivar">@consumer_pool</span> = <span class="ruby-constant">ThreadGroup</span>.<span class="ruby-identifier">new</span>
@@ -262,7 +262,7 @@ the producer pool :consumer_size      =&gt; Size of the consumer pool
 
         <div class="method-description">
           
-          <p>Set the consumer task &amp;task: The task that procceed the resources.
+          <p>Set the consumer task &amp;task: The task that process the resources.
 Should take the resource as a paramater:</p>
 
 <pre>do | resource |
@@ -273,7 +273,7 @@ end</pre>
 
           
           <div class="method-source-code" id="consume_with-source">
-            <pre><span class="ruby-comment"># File lib/yunhe/core.rb, line 79</span>
+            <pre><span class="ruby-comment"># File lib/yunhe/core.rb, line 78</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">consume_with</span> (<span class="ruby-operator">&amp;</span><span class="ruby-identifier">task</span>)
   <span class="ruby-identifier">each_consumer</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span> <span class="ruby-identifier">thread</span> <span class="ruby-operator">|</span>
     <span class="ruby-identifier">thread</span>.<span class="ruby-identifier">kill</span>
@@ -319,7 +319,7 @@ end</pre>
 
           
           <div class="method-source-code" id="produce_by-source">
-            <pre><span class="ruby-comment"># File lib/yunhe/core.rb, line 62</span>
+            <pre><span class="ruby-comment"># File lib/yunhe/core.rb, line 61</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">produce_by</span> (<span class="ruby-operator">&amp;</span><span class="ruby-identifier">task</span>)
   <span class="ruby-identifier">each_producer</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span> <span class="ruby-identifier">thread</span> <span class="ruby-operator">|</span>
     <span class="ruby-identifier">thread</span>.<span class="ruby-identifier">kill</span>
@@ -360,7 +360,7 @@ buffer queue.</p>
 
           
           <div class="method-source-code" id="terminate-source">
-            <pre><span class="ruby-comment"># File lib/yunhe/core.rb, line 91</span>
+            <pre><span class="ruby-comment"># File lib/yunhe/core.rb, line 90</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">terminate</span>
   <span class="ruby-identifier">each_producer</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span> <span class="ruby-identifier">thread</span> <span class="ruby-operator">|</span>
     <span class="ruby-identifier">thread</span>.<span class="ruby-identifier">kill</span>

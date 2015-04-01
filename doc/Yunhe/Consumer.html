@@ -153,7 +153,8 @@
 
         <div class="method-description">
           
-          
+          <p>Initialize a new consumer queue: the reference of the buffer queue block:
+the task to process the resource</p>
           
           
             <div class="method-calls-super">
@@ -164,7 +165,7 @@
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/yunhe/consumer.rb, line 6</span>
+            <pre><span class="ruby-comment"># File lib/yunhe/consumer.rb, line 10</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">queue</span>, <span class="ruby-identifier">block</span>)
   <span class="ruby-keyword">super</span> <span class="ruby-operator">&amp;</span>(<span class="ruby-identifier">method</span>(<span class="ruby-value">:job</span>).<span class="ruby-identifier">to_proc</span>)
   <span class="ruby-ivar">@block</span> = <span class="ruby-identifier">block</span>
