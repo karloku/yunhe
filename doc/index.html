@@ -90,10 +90,17 @@
 <main role="main">
 
 
-<h1 id="label-Yunhe-3A-E8-BF-90-E6-B2-B3">Yunhe:运河<span><a href="#label-Yunhe-3A-E8-BF-90-E6-B2-B3">&para;</a> <a href="#top">&uarr;</a></span></h1>
+<h1 id="label-Yunhe-3A-E8-BF-90-E6-B2-B3+-+Canal">Yunhe:运河 - Canal<span><a href="#label-Yunhe-3A-E8-BF-90-E6-B2-B3+-+Canal">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<h2 id="label-Installation">Installation<span><a href="#label-Installation">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<pre class="ruby"><span class="ruby-identifier">gem</span> <span class="ruby-identifier">install</span> <span class="ruby-identifier">yunhe</span>
+</pre>
+
+<h2 id="label-Usage">Usage<span><a href="#label-Usage">&para;</a> <a href="#top">&uarr;</a></span></h2>
 
 <p><a href="Yunhe.html">Yunhe</a> is a light weight gem that implements the
-Producer/Consumer pattern using threads</p>
+Producer/Consumer pattern using threads.</p>
 
 <pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;yunhe&#39;</span>
 <span class="ruby-comment"># options</span>
@@ -109,6 +116,9 @@ Producer/Consumer pattern using threads</p>
 <span class="ruby-identifier">yunhe</span>.<span class="ruby-identifier">consume_with</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">res</span><span class="ruby-operator">|</span>
   <span class="ruby-identifier">puts</span> <span class="ruby-identifier">res</span>
 <span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># stop the canal</span>
+<span class="ruby-identifier">yunhe</span>.<span class="ruby-identifier">terminate</span>
 </pre>
 </main>
 
