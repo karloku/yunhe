@@ -1,10 +1,8 @@
 # Yunhe:运河 - Canal
-
+Yunhe is a light weight gem that implements the Producer/Consumer pattern using threads.
 ## Installation
     gem install yunhe
 ## Usage
-Yunhe is a light weight gem that implements the Producer/Consumer pattern using threads.
-
     require 'yunhe'
     # options
     options = {
