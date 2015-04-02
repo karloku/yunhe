@@ -1,4 +1,4 @@
 # ignore generated gem
 *.gem
 doc/
-*/*.DS_Store
+**/.DS_Store
