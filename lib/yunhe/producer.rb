@@ -12,10 +12,15 @@ module Yunhe
     private
     def job
       while(true) do
-        rtn = block.call
-        queue.enq rtn
+        result = block.call
+        if result.respond_to? :each
+          result.each do |res|
+            queue.enq res
+          end
+        else
+          queue.enq result
+        end
       end
     end
-
   end
 end

@@ -12,7 +12,8 @@ Yunhe is a light weight gem that implements the Producer/Consumer pattern using 
     }
     yunhe = Yunhe.build(options)
     yunhe.produce_by do 
-      Date.now
+      Time.now
+      # [Time.now, Time.now + 86400] # Each will be added to the buffer queue
     end
     yunhe.consume_with do |res|
       puts res
